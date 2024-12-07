@@ -18,6 +18,8 @@ load_dotenv()
 
 DB_URI = os.getenv('db_url')
 DB_NAME = os.getenv('db')
+DB_USER = os.getenv('user')
+DB_PASS = os.getenv('password')
 
 try:
     # connect to couch db (this is my endpoint deployed on azure)
@@ -27,7 +29,7 @@ except Error as e:
 
 try:
     # user auth for insertion
-    couch.resource.credentials = ('admin', 'saluspecial')
+    couch.resource.credentials = (DB_USER, DB_PASS)
 except Error as e:
     print('issue with DB credentials', e)
 
