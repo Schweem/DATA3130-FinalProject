@@ -5,6 +5,9 @@
 - StreamlitApp contains the code required to run the front end.
 - DataLoading houses the CSV of the data used, as well as the python script for loading it into couchDB
 
+### Docker usage (WIP)
+- build image from dockerfile in root directory of repo. (Currently not done)
+
 ### Data from Kaggle
 [Can be found here](https://www.kaggle.com/datasets/arslaan5/explore-car-performance-fuel-efficiency-data)
 
