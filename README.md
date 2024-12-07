@@ -1,5 +1,5 @@
 # DATA3130-FinalProject
- Final project for databases for undergrad databases for data sceience. Built and deployed a couchDB with azure and docker. Built streamlit interface to visualize and communicate it. 
+ Final project for undergrad databases for data sceience. Built and deployed a couchDB with azure and docker. Built streamlit interface to visualize and communicate it. 
 
 ### Repo Layout
 - StreamlitApp contains the code required to run the front end.
