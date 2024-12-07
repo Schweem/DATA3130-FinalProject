@@ -11,9 +11,17 @@
 import couchdb
 import pandas as pd
 
+import os 
+from dotenv import load_dotenv
+
+load_dotenv()
+
+DB_URI = os.getenv('db_url')
+DB_NAME = os.getenv('db')
+
 try:
     # connect to couch db (this is my endpoint deployed on azure)
-    couch = couchdb.Server("http://20.246.155.32:5984/")
+    couch = couchdb.Server(DB_URI)
 except Error as e:
     print('something went wrong connecting to the DB', e)
 
@@ -25,7 +33,7 @@ except Error as e:
 
 # Access or create if not there
 try:
-    db_name = "car_data"
+    db_name = DB_NAME
     if db_name in couch: # former
         db = couch[db_name]
     else: # latter 
