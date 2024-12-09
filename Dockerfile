@@ -1,9 +1,12 @@
 # Image 
 FROM python:3.12-slim
 
-# Dir
+# Set working directory
 WORKDIR /streamlitApp
-COPY . /streamlitApp
+
+# Copy specific files
+COPY /streamlitApp/carDash.py ./carDash.py
+COPY /streamlitApp/requirements.txt ./requirements.txt
 
 # Deps
 RUN pip install --no-cache-dir -r requirements.txt
@@ -12,4 +15,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8501
 
 # Run
-CMD ["streamlit", "run", "/streamlitApp/carDash.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "carDash.py", "--server.port=8501", "--server.address=0.0.0.0"]
